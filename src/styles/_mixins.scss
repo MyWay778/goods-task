@@ -1,0 +1,16 @@
+@use './variables' as *;
+
+@mixin input-style {
+  font-size: 0.75rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: $color-font-main;
+  border: none;
+  outline-color: $color-outline;
+  outline-offset: 0.1875rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+@mixin shadow {
+  box-shadow: 0 1.25rem 1.875rem rgba(0, 0, 0, 0.04), 0 0.375rem 0.625rem rgba(0, 0, 0, 0.02);
+}

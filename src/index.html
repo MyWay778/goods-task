@@ -8,6 +8,155 @@
   <title>Goods Task</title>
 </head>
 <body>
-  <h1>Hello</h1>
+<main class="main">
+  <h1 class="header_hide">Goods task</h1>
+  <div class="container container_main">
+    <section class="product-add-section">
+      <h2>Добавление товара</h2>
+      <form class="product-form">
+        <div class="product-form__field">
+          <div class="form-input">
+            <label for="form-input__name" class="form-input__label form-input__label_with-dot">Наименование
+              товара</label>
+            <input id="form-input__name" type="text" class="form-input__input"
+                   placeholder="Введите наименование товара" required>
+            <div class="form-input__error form-input__error_visible">Поле является обязательным</div>
+          </div>
+          <div class="form-input">
+            <label for="form-textarea__description" class="form-input__label">Описание товара</label>
+            <textarea id="form-textarea__description" class="form-input__input form-input__input_textarea"
+                      placeholder="Введите описание товара"></textarea>
+          </div>
+          <div class="form-input">
+            <label for="form-input__image-link" class="form-input__label form-input__label_with-dot">Ссылка на
+              изображение товара</label>
+            <input id="form-input__image-link" type="url" class="form-input__input" placeholder="Введите ссылку"
+                   required>
+            <div class="form-input__error form-input__error_visible">Поле является обязательным</div>
+          </div>
+          <div class="form-input">
+            <label for="form-input__price" class="form-input__label form-input__label_with-dot">Цена товара</label>
+            <input id="form-input__price" type="number" class="form-input__input form-input__input_number"
+                   placeholder="Введите цену" required>
+            <div class="form-input__error form-input__error_visible">Поле является обязательным</div>
+          </div>
+        </div>
+        <div class="product-form__controls">
+          <button class="button button_disabled" type="submit">Добавить товар</button>
+        </div>
+      </form>
+    </section>
+    <section class="product-list-section">
+      <div class="product-list-control">
+        <div class="search-filter">
+          <select class="select" required>
+            <option value="" selected disabled hidden>По умолчанию</option>
+            <option value="min">По цене min</option>
+            <option value="max">По цене max</option>
+            <option value="name">По наименованию</option>
+          </select>
+        </div>
+      </div>
+      <ul class="product-list">
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+        <li class="product-list__item">
+          <div class="product-card">
+            <div class="product-card-control">
+              <button class="product-card-control__button"></button>
+            </div>
+            <div class="product-card-image">
+              <img class="product-card-image__image" src=<%=require("./assets/images/camera.jpg")%> alt="Product image">
+            </div>
+            <div class="product-card-description">
+              <h3 class="product-card-description__title">Наименование товара</h3>
+              <p class="product-card-description__description">Довольно-таки интересное описание товара в несколько
+                строк.</p>
+              <p class="product-card-description__price">10 000 руб.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
 </body>
 </html>
