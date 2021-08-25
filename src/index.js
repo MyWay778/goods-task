@@ -1,3 +1,5 @@
 import './styles/styles.scss';
 
-console.log('hello');
+const a = (b) => b + 1;
+
+console.log('hello   ');
