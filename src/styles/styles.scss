@@ -1,4 +1,5 @@
-@use './fonts';
+@use 'fonts';
+@use 'variables' as *;
 
 *,
 *::after,
@@ -12,9 +13,141 @@ html {
   box-sizing: inherit;
   font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
+  color: $color-font-main;
+  line-height: 1.25;
 }
 
-h1 {
-  color: blue;
+body {
+  background-color: $color-background-body;
 }
+
+h2 {
+  font-size: 1.75rem;
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.header_hide {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.product-add-section {
+  width: 100%;
+  max-width: 20.75rem;
+}
+
+.product-form {
+  margin-top: 1rem;
+  background-color: $color-background-primary;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1.25rem 1.875rem rgba(0, 0, 0, 0.04), 0 0.375rem 0.625rem rgba(0, 0, 0, 0.02);
+}
+
+.form-input {
+  margin-bottom: 1rem;
+}
+
+.form-input__label {
+  display: block;
+  position: relative;
+  font-size: 0.625rem;
+
+  &_with-dot {
+    &::after {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 50%;
+      background-color: $color-background-active;
+    }
+  }
+}
+
+.form-input__input {
+  width: 100%;
+  height: 1.5rem;
+  font-size: 0.75rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: $color-font-main;
+  margin-top: 0.25rem;
+  padding: 0.625rem 1rem;
+  border: none;
+  outline-color: $color-outline;
+  outline-offset: 0.1875rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  &::placeholder {
+    color: $color-font-placeholder;
+  }
+
+  &_textarea {
+    resize: none;
+    height: 6.75rem;
+  }
+
+  &_number {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.product-form__controls {
+  margin-top: 1.5rem;
+}
+
+.button {
+  width: 100%;
+  max-width: 18rem;
+  padding: 0.625rem;
+  color: $color-font-light;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  border: none;
+  background-color: $color-background-success;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  outline-color: $color-outline;
+
+  &:hover {
+    background-color: $color-background-success-hover;
+  }
+
+  &:disabled {
+    background-color: $color-background-disabled;
+    cursor: default;
+    color: $color-font-disabled;
+  }
+}
+

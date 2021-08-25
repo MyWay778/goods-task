@@ -8,29 +8,34 @@
   <title>Goods Task</title>
 </head>
 <body>
-<main>
-  <h1 class="header hide">Goods task</h1>
-  <div class="container">
+<main class="main">
+  <h1 class="header_hide">Goods task</h1>
+  <div class="container flex gap-1">
     <section class="product-add-section">
       <h2>Добавление товара</h2>
       <form class="product-form">
         <div class="product-form__field">
           <div class="form-input">
-            <label for="form-input__name" class="form-input__label">Наименование товара</label>
+            <label for="form-input__name" class="form-input__label form-input__label_with-dot">Наименование
+              товара</label>
             <input id="form-input__name" type="text" class="form-input__input"
-                   placeholder="Введите наименование товара">
-          </div>
-          <div class="form-textarea">
-            <label for="form-textarea__description" class="form-textarea__label">Наименование товара</label>
-            <textarea id="form-textarea__description" class="form-textarea__textarea">Введите описание товара</textarea>
+                   placeholder="Введите наименование товара" required>
           </div>
           <div class="form-input">
-            <label for="form-input__image-link" class="form-input__label">Ссылка на изображение товара</label>
-            <input id="form-input__image-link" type="text" class="form-input__input" placeholder="Введите ссылку">
+            <label for="form-textarea__description" class="form-input__label">Описание товара</label>
+            <textarea id="form-textarea__description" class="form-input__input form-input__input_textarea"
+                      placeholder="Введите описание товара"></textarea>
           </div>
           <div class="form-input">
-            <label for="form-input__price" class="form-input__label">Цена товара</label>
-            <input id="form-input__price" type="text" class="form-input__input" placeholder="Введите цену">
+            <label for="form-input__image-link" class="form-input__label form-input__label_with-dot">Ссылка на
+              изображение товара</label>
+            <input id="form-input__image-link" type="url" class="form-input__input" placeholder="Введите ссылку"
+                   required>
+          </div>
+          <div class="form-input">
+            <label for="form-input__price" class="form-input__label form-input__label_with-dot">Цена товара</label>
+            <input id="form-input__price" type="number" class="form-input__input form-input__input_number"
+                   placeholder="Введите цену" required>
           </div>
         </div>
         <div class="product-form__controls">
