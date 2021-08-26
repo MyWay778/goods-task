@@ -302,3 +302,42 @@ h2 {
     justify-content: center;
   }
 }
+
+.app-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-background-modal;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.loader {
+  border: 0.5rem solid $color-outline;
+  border-top-color: $color-font-main;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
