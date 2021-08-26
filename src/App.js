@@ -1,7 +1,8 @@
 import './styles/styles.scss';
 import Store from './Store';
-import cameraImg from './assets/images/camera.jpg';
+import mockData from './mock-data/data';
 import View from './view/View';
+import Controller from './controller/Controller';
 
 export default class App {
   constructor() {
@@ -12,6 +13,7 @@ export default class App {
       throw new Error('productListElement not found!');
     }
     this.view = new View(productListElement);
+    this.controller = new Controller(document.body);
 
     this.store.subscribe('products', this.view.renderProducts);
     this.store.subscribe('loading', this.view.loadingListener);
@@ -22,18 +24,9 @@ export default class App {
     const response = await new Promise((resolve) => {
       setTimeout(() => {
         resolve({
-          data: [
-            {
-              id: 1,
-              image: cameraImg,
-              name: 'Наименование товара',
-              description:
-                'Довольно-таки интересное описание товара в несколько строк.',
-              price: 10000,
-            },
-          ],
+          data: mockData,
         });
-      }, 2000);
+      }, 0);
     });
     this.store.changeState('products', response.data);
     this.store.changeState('loading', false);

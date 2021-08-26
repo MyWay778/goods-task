@@ -5,8 +5,9 @@
   font-family: "Source Sans Pro", sans-serif;
   color: $color-font-main;
   border: none;
-  outline-color: $color-outline;
-  outline-offset: 0.1875rem;
+  outline: none;
+  //outline-color: $color-outline;
+  //outline-offset: 0.1875rem;
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }

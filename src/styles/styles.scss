@@ -100,11 +100,15 @@ h2 {
     color: $color-font-placeholder;
   }
 
-  &:focus:invalid {
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1), 0 0 0 0.0625rem $color-background-active;
+  //&:focus:invalid {
+  //  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1), 0 0 0 0.0625rem $color-background-active;
+  //}
+
+  &:focus {
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1), 0 0 0 0.0625rem $color-secondary;
   }
 
-  &:focus:invalid + .form-input__error {
+  &_invalid + .form-input__error {
     visibility: visible;
   }
 
@@ -123,6 +127,10 @@ h2 {
       margin: 0;
     }
   }
+}
+
+.form-input__input.form-input__input_invalid {
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1), 0 0 0 0.0625rem $color-background-active;
 }
 
 .form-input__error {
