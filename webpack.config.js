@@ -20,18 +20,14 @@ module.exports = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Goods Task',
-        template: 'src/index.html'
+        template: 'src/index.html',
       }),
     ],
     module: {
       rules: [
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader",
-          ],
+          use: ['style-loader', 'css-loader', 'sass-loader'],
         },
         {
           test: /\.css$/i,
@@ -41,7 +37,7 @@ module.exports = (env) => {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
         },
-      ]
-    }
-  }
-}
+      ],
+    },
+  };
+};
