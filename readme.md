@@ -7,7 +7,7 @@ This is test task.
 For this task, I am focusing on responsive Html layout. I ran into some difficulty aligning cards at medium screen resolutions, I wanted to center the cards with a constant spacing between them. And, as it seems to me, I did it. I also used
 an unusual approach to form validation from my point of view.
 
-### deploy: 
+### deploy: https://myway778.github.io/goods-task/
 
 ---  
 #### Installation: 
