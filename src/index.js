@@ -1,5 +1,4 @@
-import './styles/styles.scss';
+import App from './App';
 
-const a = (b) => b + 1;
-
-console.log('hello   ');
+const app = new App();
+app.init();
