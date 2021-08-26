@@ -25,7 +25,7 @@ export default class App {
         resolve({
           data: mockData,
         });
-      }, 0);
+      }, 1000);
     });
     this.store.changeState('products', response.data);
     this.store.changeState('loading', false);

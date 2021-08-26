@@ -6,6 +6,7 @@ export default class Store {
     this.state = {
       products: productsInitialState,
       loading: false,
+      filter: null,
     };
     this.subscribers = {};
   }
