@@ -206,6 +206,7 @@ h2 {
   appearance: none;
   padding: 0.625rem 0.5rem 0.625rem 1rem;
   cursor: pointer;
+  height: 2.125rem;
 
   &:not(:focus):invalid {
     color: $color-font-placeholder;
@@ -228,6 +229,7 @@ h2 {
 
 .product-card {
   width: 100%;
+  height: 26.4375rem;
   //max-width: 20.75rem;
   //min-width: 18.75rem;
   background-color: $color-background-primary;
@@ -270,13 +272,13 @@ h2 {
 }
 
 .product-card-image {
-  max-height: 12.5rem;
+  height: 12.5rem;
 }
 
 .product-card-image__image {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 
 .product-card-description {
@@ -289,6 +291,7 @@ h2 {
 
 .product-card-description__description {
   margin-top: 1rem;
+  height: 5rem;
 }
 
 .product-card-description__price {

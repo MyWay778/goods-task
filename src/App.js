@@ -13,7 +13,7 @@ export default class App {
       throw new Error('productListElement not found!');
     }
     this.view = new View(productListElement);
-    this.controller = new Controller(document.body);
+    this.controller = new Controller(document.body, this.store);
 
     this.store.subscribe('products', this.view.renderProducts);
     this.store.subscribe('loading', this.view.loadingListener);

@@ -1,3 +1,9 @@
+import imagePlaceholder from '../assets/images/image-placeholder.png';
+
+const normalizePrice = (price) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+};
+
 export default class ProductItem {
   constructor(productObject) {
     this.data = productObject;
@@ -31,6 +37,10 @@ export default class ProductItem {
     const image = new Image();
     image.classList.add('product-card-image__image');
     image.src = this.data.image;
+    image.addEventListener('error', (evt) => {
+      const { target } = evt;
+      target.src = imagePlaceholder;
+    });
 
     const cardDescription = document.createElement('div');
     cardDescription.classList.add('product-card-description');
@@ -45,7 +55,7 @@ export default class ProductItem {
 
     const price = document.createElement('p');
     price.classList.add('product-card-description__price');
-    price.textContent = `${this.data.price} руб.`;
+    price.textContent = `${normalizePrice(this.data.price)} руб.`;
 
     cardDescription.append(title, description, price);
     cardImage.append(image);

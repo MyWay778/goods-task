@@ -4,10 +4,16 @@ export default class FormController {
     this.form.onsubmit = this.submitHandler;
     this.submitCallback = submitCallback;
 
-    [this.nameField, , this.imageField, this.priceField, this.addButton] =
-      this.form;
+    [
+      this.nameField,
+      this.descriptionField,
+      this.imageField,
+      this.priceField,
+      this.addButton,
+    ] = this.form;
 
     this.initInput(this.nameField, 'name');
+    this.initInput(this.descriptionField, 'description');
     this.initInput(this.imageField, 'image');
     this.initInput(this.priceField, 'price');
 
@@ -39,6 +45,16 @@ export default class FormController {
   submitHandler = (evt) => {
     evt.preventDefault();
     this.submitCallback(this.newProduct);
+    this.nameField.value = '';
+    this.imageField.value = '';
+    this.priceField.value = '';
+    this.descriptionField.value = '';
+    this.newProduct = {
+      name: '',
+      description: 'Описание отсутствует',
+      image: '',
+      price: '',
+    };
   };
 
   blurHandler = (evt) => {
