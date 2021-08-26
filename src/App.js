@@ -7,13 +7,12 @@ import Controller from './controller/Controller';
 export default class App {
   constructor() {
     this.store = new Store([]);
-
+    this.controller = new Controller(document.body, this.store);
     const productListElement = document.querySelector('.product-list');
     if (!productListElement) {
       throw new Error('productListElement not found!');
     }
-    this.view = new View(productListElement);
-    this.controller = new Controller(document.body, this.store);
+    this.view = new View(productListElement, this.controller);
 
     this.store.subscribe('products', this.view.renderProducts);
     this.store.subscribe('loading', this.view.loadingListener);

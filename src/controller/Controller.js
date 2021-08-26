@@ -9,8 +9,17 @@ export default class Controller {
 
   submitHandler = (newProduct) => {
     const { products } = this.store.getState();
-    const updatedProducts = [newProduct, ...products];
+    const newProductWithId = { ...newProduct, id: Date.now() };
+    const updatedProducts = [newProductWithId, ...products];
     console.log(updatedProducts);
+    this.store.changeState('products', updatedProducts);
+  };
+
+  deleteProductHandlerCreator = (productId) => () => {
+    const { products } = this.store.getState();
+    const updatedProducts = products.filter(
+      (product) => product.id !== productId
+    );
     this.store.changeState('products', updatedProducts);
   };
 }

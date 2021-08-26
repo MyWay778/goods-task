@@ -2,8 +2,9 @@ import ProductItem from './ProductItem';
 import AppLoader from './AppLoader';
 
 export default class View {
-  constructor(productListRootElement) {
+  constructor(productListRootElement, controller) {
     this.root = productListRootElement;
+    this.controller = controller;
     this.renderedProducts = {};
     this.loader = new AppLoader(document.body);
   }
@@ -26,7 +27,10 @@ export default class View {
   };
 
   createAndRenderProduct = (product) => {
-    const newProduct = new ProductItem(product);
+    const newProduct = new ProductItem(
+      product,
+      this.controller.deleteProductHandlerCreator(product.id)
+    );
     newProduct.render(this.root);
     this.renderedProducts[product.id] = newProduct;
   };

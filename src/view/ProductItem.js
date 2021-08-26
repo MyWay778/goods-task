@@ -5,9 +5,9 @@ const normalizePrice = (price) => {
 };
 
 export default class ProductItem {
-  constructor(productObject) {
+  constructor(productObject, deleteCallback) {
     this.data = productObject;
-    this.element = this.createElement();
+    this.element = this.createElement(deleteCallback);
   }
 
   render(root) {
@@ -18,7 +18,7 @@ export default class ProductItem {
     this.element.remove();
   }
 
-  createElement() {
+  createElement(deleteHandler) {
     const item = document.createElement('li');
     item.classList.add('product-list__item');
 
@@ -30,6 +30,7 @@ export default class ProductItem {
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('product-card-control__button');
+    deleteButton.onclick = deleteHandler;
 
     const cardImage = document.createElement('div');
     cardImage.classList.add('product-card-image');
