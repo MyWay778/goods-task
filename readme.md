@@ -18,3 +18,6 @@ npm install
 ```shell
 npm start
 ```
+---
+### Screenshots:
+![goods-task](https://user-images.githubusercontent.com/62506380/131007030-deb1a2da-22c5-42d6-b994-e7591c0c521e.png)
